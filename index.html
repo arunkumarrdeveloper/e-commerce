@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Aaliya Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <button class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="logo">
+            <span class="logo-box">AK</span>
+
+            <div>
+                <h1>Aaliya Store</h1>
+                <small>Freshness You Can Trust</small>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text"
+                   placeholder="Search products...">
+        </div>
+
+        <nav class="desktop-nav">
+
+            <a href="#home">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="#categories">
+                <i class="fa-solid fa-table-cells"></i>
+                Categories
+            </a>
+
+            <a href="#cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+            </a>
+
+            <a href="#login">
+                <i class="fa-regular fa-user"></i>
+                Login
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<main id="home">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h2>
+                Fresh Products<br>
+                Delivered to Your Home
+            </h2>
+
+            <p>
+                Best quality products at best prices
+            </p>
+
+            <a href="#categories"
+               class="shop-btn">
+                Shop Now
+            </a>
+
+        </div>
+
+        <div class="hero-img">
+
+            <img src="images/ChatGPT Image Aug 13, 2026, 09_51_11 PM.png"
+                 alt="Fresh Products">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories"
+             id="categories">
+
+        <div class="section-heading">
+
+            <h2>Shop by Category</h2>
+
+            <p>Click a category to view available products</p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- FRUITS -->
+
+            <button class="category-card"
+                    onclick="showProducts('fruits', this)">
+
+                <div class="category-img">
+                    <img src="images/fruits.png"
+                         alt="Fruits">
+                </div>
+
+                <h3>Fruits</h3>
+
+                <span>View Products</span>
+
+            </button>
+
+
+            <!-- VEGETABLES -->
+
+            <button class="category-card"
+                    onclick="showProducts('vegetables', this)">
+
+                <div class="category-img">
+                    <img src="images/veg.png"
+                         alt="Vegetables">
+                </div>
+
+                <h3>Vegetables</h3>
+
+                <span>View Products</span>
+
+            </button>
+
+
+            <!-- SNACKS -->
+
+            <button class="category-card"
+                    onclick="showProducts('snacks', this)">
+
+                <div class="category-img">
+                    <img src="images/lays.png"
+                         alt="Snacks">
+                </div>
+
+                <h3>Snacks</h3>
+
+                <span>View Products</span>
+
+            </button>
+
+
+            <!-- MAKEUP -->
+
+            <button class="category-card"
+                    onclick="showProducts('makeup', this)">
+
+                <div class="category-img">
+                    <img src="images/makeup.png"
+                         alt="Makeup">
+                </div>
+
+                <h3>Makeup</h3>
+
+                <span>View Products</span>
+
+            </button>
+
+
+            <!-- FITNESS -->
+
+            <button class="category-card"
+                    onclick="showProducts('fitness', this)">
+
+                <div class="category-img">
+                    <img src="images/fitnes.png"
+                         alt="Fitness">
+                </div>
+
+                <h3>Fitness</h3>
+
+                <span>View Products</span>
+
+            </button>
+
+
+            <!-- ESSENTIALS -->
+
+            <button class="category-card"
+                    onclick="showProducts('essentials', this)">
+
+                <div class="category-img">
+                    <img src="images/daily.png"
+                         alt="Daily Essentials">
+                </div>
+
+                <h3>Daily Essentials</h3>
+
+                <span>View Products</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="products"
+             id="products">
+
+        <div class="products-top">
+
+            <div>
+                <h2>Available Products</h2>
+
+                <p id="categoryTitle">
+                    Select a category to view products
+                </p>
+            </div>
+
+            <button class="close-btn"
+                    onclick="hideProducts()">
+
+                <i class="fa-solid fa-xmark"></i>
+                Close
+
+            </button>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- ===== FRUITS ===== -->
+
+            <article class="product-card"
+                     data-category="fruits">
+
+                <div class="product-img">
+                    <img src="images/apple.png"
+                         alt="Apple">
+                </div>
+
+                <h3>Fresh Apple</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹120</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="fruits">
+
+                <div class="product-img">
+                    <img src="images/banana.png"
+                         alt="Banana">
+                </div>
+
+                <h3>Banana</h3>
+
+                <p>1 dozen</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹45</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="fruits">
+
+                <div class="product-img">
+                    <img src="images/orange.png"
+                         alt="Orange">
+                </div>
+
+                <h3>Orange</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹80</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="fruits">
+
+                <div class="product-img">
+                    <img src="images/grapes.png"
+                         alt="Grapes">
+                </div>
+
+                <h3>Grapes</h3>
+
+                <p>500 g</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹90</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ===== VEGETABLES ===== -->
+
+            <article class="product-card"
+                     data-category="vegetables">
+
+                <div class="product-img">
+                    <img src="images/tomoto.png"
+                         alt="Tomato">
+                </div>
+
+                <h3>Tomato</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹30</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="vegetables">
+
+                <div class="product-img">
+                    <img src="images/pototo.png"
+                         alt="Potato">
+                </div>
+
+                <h3>Potato</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹25</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="vegetables">
+
+                <div class="product-img">
+                    <img src="images/onion.png"
+                         alt="Onion">
+                </div>
+
+                <h3>Onion</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹28</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ===== SNACKS ===== -->
+
+            <article class="product-card"
+                     data-category="snacks">
+
+                <div class="product-img">
+                    <img src="images/pacha lays.png"
+                         alt="Lays">
+                </div>
+
+                <h3>Lays Classic</h3>
+
+                <p>52 g</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹20</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="snacks">
+
+                <div class="product-img">
+                    <img src="images/biscuts.png"
+                         alt="Biscuit">
+                </div>
+
+                <h3>Parle-G Biscuit</h3>
+
+                <p>100 g</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹10</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ===== MAKEUP ===== -->
+
+            <article class="product-card"
+                     data-category="makeup">
+
+                <div class="product-img">
+                    <img src="images/lip.png"
+                         alt="Lipstick">
+                </div>
+
+                <h3>Lakme Lipstick</h3>
+
+                <p>1 piece</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹299</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="makeup">
+
+                <div class="product-img">
+                    <img src="images/compat.png"
+                         alt="Compact">
+                </div>
+
+                <h3>Compact Powder</h3>
+
+                <p>1 piece</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹249</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ===== FITNESS ===== -->
+
+            <article class="product-card"
+                     data-category="fitness">
+
+                <div class="product-img">
+                    <img src="images/whey.png"
+                         alt="Whey Protein">
+                </div>
+
+                <h3>Whey Protein</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹1499</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="fitness">
+
+                <div class="product-img">
+                    <img src="images/creatin.png"
+                         alt="Creatine">
+                </div>
+
+                <h3>Creatine</h3>
+
+                <p>250 g</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹999</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="fitness">
+
+                <div class="product-img">
+                    <img src="images/ots.png"
+                         alt="Oats">
+                </div>
+
+                <h3>Healthy Oats</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹150</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ===== ESSENTIALS ===== -->
+
+            <article class="product-card"
+                     data-category="essentials">
+
+                <div class="product-img">
+                    <img src="images/surf.png"
+                         alt="Essentials">
+                </div>
+
+                <h3>Surf Excel</h3>
+
+                <p>1 kg</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹180</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+
+            <article class="product-card"
+                     data-category="essentials">
+
+                <div class="product-img">
+                    <img src="images/sope.png"
+                         alt="Soap">
+                </div>
+
+                <h3>Dettol Soap</h3>
+
+                <p>125 g</p>
+
+                <div class="product-bottom">
+
+                    <strong>₹45</strong>
+
+                    <button onclick="addToCart(this)">Add</button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CART ================= -->
+
+<section class="cart-section" id="cart">
+
+    <div class="cart-header">
+
+        <div>
+            <h2>Your Cart</h2>
+            <p>Review your selected products</p>
+        </div>
+
+        <button class="close-cart"
+                onclick="closeCart()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <!-- CART ITEMS -->
+
+    <div id="cartItems">
+
+        <div class="empty-cart">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <h3>Your cart is empty</h3>
+
+            <p>Add products to your cart.</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CART SUMMARY -->
+
+    <div class="cart-summary">
+
+        <div>
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">₹0</strong>
+        </div>
+
+        <div>
+            <span>Delivery</span>
+            <strong id="deliveryCharge">₹0</strong>
+        </div>
+
+        <hr>
+
+        <div class="grand-total">
+            <span>Total</span>
+            <strong id="cartTotal">₹0</strong>
+        </div>
+
+        <button class="checkout-btn" onclick="goToCheckout()">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= MOBILE NAV ================= -->
+
+<nav class="mobile-nav">
+
+    <a href="#home">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="#categories">
+        <i class="fa-solid fa-table-cells"></i>
+        <span>Categories</span>
+    </a>
+
+    <a href="#cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Cart</span>
+    </a>
+
+    <a href="#login">
+        <i class="fa-regular fa-user"></i>
+        <span>Login</span>
+    </a>
+
+</nav>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

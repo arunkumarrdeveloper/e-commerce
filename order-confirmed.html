@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed - Aaliya Store</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #f3fff5, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #222;
+            padding: 20px;
+        }
+
+        .confirmation-box {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #168b35;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 42px;
+        }
+
+        h1 {
+            color: #168b35;
+            margin-bottom: 12px;
+            font-size: 30px;
+        }
+
+        .message {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .order-info {
+            background: #f3fff5;
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .order-info p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .order-info strong {
+            color: #222;
+        }
+
+        .home-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: #168b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background: #106c29;
+        }
+
+        @media (max-width: 600px) {
+
+            .confirmation-box {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .success-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="confirmation-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <h1>
+            Order Confirmed!
+        </h1>
+
+
+        <p class="message">
+            Thank you for shopping with Aaliya Store.
+            Your order has been placed successfully.
+        </p>
+
+
+        <div class="order-info">
+
+            <p>
+                <strong>Order Status:</strong>
+                Confirmed
+            </p>
+
+            <p>
+                <strong>Payment:</strong>
+                Cash on Delivery
+            </p>
+
+            <p>
+                <strong>Total:</strong>
+                <span id="orderTotal">₹0</span>
+            </p>
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="home-btn"
+        >
+            Continue Shopping
+        </a>
+
+    </div>
+
+
+    <script>
+
+        /* ===============================
+           GET ORDER DATA
+        =============================== */
+
+        const order =
+            JSON.parse(
+                sessionStorage.getItem("aaliyaOrder")
+            );
+
+
+        /* ===============================
+           SHOW TOTAL
+        =============================== */
+
+        if (order) {
+
+            document.getElementById(
+                "orderTotal"
+            ).textContent =
+                "₹" + order.total;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

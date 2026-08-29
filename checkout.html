@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Aaliya Store</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #f3fff5, #ffffff);
+            min-height: 100vh;
+            color: #222;
+        }
+
+        /* ================= HEADER ================= */
+
+        .checkout-header {
+            background: white;
+            padding: 18px 25px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .logo-box {
+            width: 45px;
+            height: 45px;
+            background: #168b35;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo h1 {
+            font-size: 22px;
+        }
+
+        .logo small {
+            color: #777;
+        }
+
+        /* ================= PAGE ================= */
+
+        .checkout-page {
+            min-height: calc(100vh - 80px);
+            padding: 35px 15px;
+        }
+
+        .checkout-container {
+            width: 100%;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .page-title i {
+            font-size: 35px;
+            color: #168b35;
+            margin-bottom: 10px;
+        }
+
+        .page-title h2 {
+            font-size: 30px;
+            margin-bottom: 6px;
+        }
+
+        .page-title p {
+            color: #777;
+        }
+
+        /* ================= BOX ================= */
+
+        .checkout-box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .checkout-box h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .checkout-box h3 i {
+            color: #168b35;
+            margin-right: 8px;
+        }
+
+        /* ================= INPUT ================= */
+
+        .checkout-box input,
+        .checkout-box textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 14px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .checkout-box input:focus,
+        .checkout-box textarea:focus {
+            border-color: #168b35;
+        }
+
+        .checkout-box textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        /* ================= PAYMENT ================= */
+
+        .payment-option {
+            display: block;
+            padding: 14px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .payment-option input {
+            width: auto;
+            margin-right: 8px;
+            margin-bottom: 0;
+        }
+
+        /* ================= ORDER SUMMARY ================= */
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            color: #555;
+        }
+
+        .summary-row strong {
+            color: #222;
+        }
+
+        .total-row {
+            border-top: 1px solid #ddd;
+            margin-top: 8px;
+            padding-top: 18px;
+            font-size: 20px;
+            color: #168b35;
+        }
+
+        /* ================= PLACE ORDER ================= */
+
+        .place-order-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: #168b35;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .place-order-btn:hover {
+            background: #106c29;
+            transform: translateY(-2px);
+        }
+
+        /* ================= BACK ================= */
+
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #168b35;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .checkout-header {
+                padding: 15px;
+            }
+
+            .logo h1 {
+                font-size: 19px;
+            }
+
+            .checkout-page {
+                padding: 25px 12px 50px;
+            }
+
+            .page-title h2 {
+                font-size: 25px;
+            }
+
+            .checkout-box {
+                padding: 18px;
+                border-radius: 15px;
+            }
+
+            .checkout-box h3 {
+                font-size: 18px;
+            }
+
+            .place-order-btn {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="checkout-header">
+
+        <div class="logo">
+
+            <span class="logo-box">
+                AK
+            </span>
+
+            <div>
+                <h1>Aaliya Store</h1>
+                <small>Freshness You Can Trust</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= CHECKOUT ================= -->
+
+    <main class="checkout-page">
+
+        <div class="checkout-container">
+
+
+            <div class="page-title">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <h2>Checkout</h2>
+
+                <p>Complete your order</p>
+
+            </div>
+
+
+            <!-- DELIVERY DETAILS -->
+
+            <div class="checkout-box">
+
+                <h3>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Delivery Details
+                </h3>
+
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Full Name"
+                >
+
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                >
+
+
+                <textarea
+                    id="address"
+                    placeholder="Delivery Address"
+                ></textarea>
+
+
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="City"
+                >
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div class="checkout-box">
+
+                <h3>
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payment Method
+                </h3>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="cod"
+                        checked
+                    >
+
+                    Cash on Delivery
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="online"
+                    >
+
+                    Online Payment
+
+                </label>
+
+            </div>
+
+
+            <!-- ORDER SUMMARY -->
+
+            <div class="checkout-box">
+
+                <h3>
+                    <i class="fa-solid fa-receipt"></i>
+                    Order Summary
+                </h3>
+
+
+                <div class="summary-row">
+
+                    <span>Subtotal</span>
+
+                    <strong id="checkoutSubtotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Delivery</span>
+
+                    <strong id="checkoutDelivery">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row total-row">
+
+                    <span>Total</span>
+
+                    <strong id="checkoutTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLACE ORDER -->
+
+            <button
+                type="button"
+                class="place-order-btn"
+                onclick="placeOrder()"
+            >
+
+                <i class="fa-solid fa-check"></i>
+
+                Place Order
+
+            </button>
+
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Home
+
+            </a>
+
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* =========================================
+           GET CART
+        ========================================= */
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem("cart")
+            ) || [];
+
+
+        /* =========================================
+           CALCULATE ORDER
+        ========================================= */
+
+        let subtotal = 0;
+
+
+        cart.forEach(function(item) {
+
+            subtotal +=
+                Number(item.price) *
+                Number(item.quantity);
+
+        });
+
+
+        /*
+           Delivery:
+           ₹40 if subtotal below ₹500
+           FREE if ₹500 or above
+        */
+
+        let delivery =
+            subtotal >= 500 ? 0 : 40;
+
+
+        let total =
+            subtotal + delivery;
+
+
+        /* =========================================
+           DISPLAY SUMMARY
+        ========================================= */
+
+        document.getElementById(
+            "checkoutSubtotal"
+        ).textContent =
+            "₹" + subtotal;
+
+
+        document.getElementById(
+            "checkoutDelivery"
+        ).textContent =
+            delivery === 0
+                ? "FREE"
+                : "₹" + delivery;
+
+
+        document.getElementById(
+            "checkoutTotal"
+        ).textContent =
+            "₹" + total;
+
+
+        /* =========================================
+           PLACE ORDER
+        ========================================= */
+
+        function placeOrder() {
+
+
+            let name =
+                document.getElementById(
+                    "customerName"
+                ).value.trim();
+
+
+            let phone =
+                document.getElementById(
+                    "phone"
+                ).value.trim();
+
+
+            let address =
+                document.getElementById(
+                    "address"
+                ).value.trim();
+
+
+            let city =
+                document.getElementById(
+                    "city"
+                ).value.trim();
+
+
+            /* Check details */
+
+            if (
+                name === "" ||
+                phone === "" ||
+                address === "" ||
+                city === ""
+            ) {
+
+                alert(
+                    "Please fill all delivery details."
+                );
+
+                return;
+            }
+
+
+            /* Check cart */
+
+            if (cart.length === 0) {
+
+                alert(
+                    "Your cart is empty."
+                );
+
+                window.location.href =
+                    "index.html";
+
+                return;
+            }
+
+
+            /* =====================================
+               CREATE ORDER DATA
+            ===================================== */
+
+            let orderData = {
+
+                items: cart,
+
+                subtotal: subtotal,
+
+                delivery: delivery,
+
+                total: total,
+
+                customerName: name,
+
+                phone: phone,
+
+                address: address,
+
+                city: city
+
+            };
+
+
+            /* =====================================
+               SAVE ORDER
+            ===================================== */
+
+            sessionStorage.setItem(
+                "aaliyaOrder",
+                JSON.stringify(orderData)
+            );
+
+
+            /* =====================================
+               CLEAR CART
+            ===================================== */
+
+            localStorage.removeItem("cart");
+
+
+            /* =====================================
+               GO TO ORDER CONFIRMED PAGE
+            ===================================== */
+
+            window.location.href =
+                "order-confirmed.html";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
