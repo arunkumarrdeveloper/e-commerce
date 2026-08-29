@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - S.V. Arun Transport</title>
+    <link rel="stylesheet" href="transport.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        S.V. Arun Transport_MGM
+    </div>
+
+    <button class="menu-btn" onclick="showMenu()">
+        ☰
+    </button>
+
+    <ul id="menu">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="about.html">About</a>
+        </li>
+
+        <li>
+            <a href="fleet.html">Fleet</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= BACK TO HOME ================= -->
+
+<div class="back-home">
+
+    <a href="index.html">
+        ← Back to Home
+    </a>
+
+</div>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact page-section">
+
+    <div class="section-title">
+
+        <p>
+            GET IN TOUCH
+        </p>
+
+        <h1>
+            Contact Us
+        </h1>
+
+        <div class="line"></div>
+
+        <span>
+            Contact S.V. Arun Transport
+            for your transportation requirements.
+        </span>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h2>
+                Contact Information
+            </h2>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <div>
+
+                    <strong>
+                        Phone
+                    </strong>
+
+                    <p>
+                        +91 80989 26805 , 76398 06167
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <p>
+                        arunk372131@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <strong>
+                        Location
+                    </strong>
+
+                    <p>
+                        Marungulam, Thanjavur, Tamil Nadu
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+            <h2>
+                Send Us A Message
+            </h2>
+
+
+            <form onsubmit="sendMessage(event)">
+
+                <input type="text"
+                       placeholder="Your Name"
+                       required>
+
+
+                <input type="tel"
+                       placeholder="Phone Number"
+                       required>
+
+
+                <input type="email"
+                       placeholder="Email Address">
+
+
+                <textarea rows="5"
+                          placeholder="Your Message"
+                          required></textarea>
+
+
+                <button type="submit">
+                    SEND MESSAGE →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>
+        S.V. Arun Transport
+    </h2>
+
+    <p>
+        Reliable • Safe • Trusted Transport
+    </p>
+
+    <p>
+        © 2026 S.V. Arun Transport
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showMenu() {
+
+    document
+        .getElementById("menu")
+        .classList.toggle("show");
+
+}
+
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    alert("Message sent successfully!✅🕸️");
+
+    event.target.reset();
+
+}
+
+</script>
+
+
+</body>
+</html>
+
